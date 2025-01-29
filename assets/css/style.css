@@ -173,6 +173,16 @@ article {
   padding: 15px;
   box-shadow: var(--shadow-1);
   z-index: 1;
+  animation: slidein 500ms ease forwards;
+}
+@keyframes slidein {
+  0% {
+    transform: translateX(-250px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .separator {
@@ -319,6 +329,16 @@ main {
   max-height: 112px;
   overflow: hidden;
   transition: var(--transition-2);
+  animation: slidein 500ms ease forwards;
+}
+@keyframes slidein {
+  0% {
+    transform: translateX(-100px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .sidebar.active { max-height: 405px; }
@@ -352,6 +372,9 @@ main {
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .info_more-btn {
@@ -749,14 +772,82 @@ main {
 }
 
 .clients-item img {
-  width: 100%;
+  width: 50%;
   filter: grayscale(1);
   transition: var(--transition-1);
 }
 
 .clients-item img:hover { filter: grayscale(0); }
 
+/**
+ * #tagcloud 
+ */
 
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.tagm {
+  text-decoration: none;
+  color: #c7b99b;
+  font-weight: medium;
+  padding: 4px 6px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.tagm:hover {
+  background-color: #f0f0f000;
+  color:#1c1c1c;
+  font-weight: bold;
+  transform: scale(1.2);
+}
+
+
+@media (max-width: 768px) {
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .tagm {
+    display: block;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .tagm:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+
+}
+
+.tagcloud-item {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+}
+
+.tagcloud-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+}
 
 
 
@@ -1239,7 +1330,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * client
    */
 
-  .clients-item { min-width: calc(33.33% - 10px); }
+  .clients-item { min-width: calc(25% - 10px); }
 
 
 
@@ -1399,6 +1490,14 @@ textarea.form-input::-webkit-resizer { display: none; }
     padding: 30px;
   }
 
+  .service-list :hover {
+    outline: 2px solid rgb(231, 179, 82);
+  }
+
+  .service-item :hover {
+    outline: 0px;
+  }
+
   .service-icon-box {
     margin-bottom: 0;
     margin-top: 5px;
@@ -1474,7 +1573,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   /* clients */
 
   .clients-list {
-    gap: 50px;
+    gap: 25px;
     margin: 0 -30px;
     padding: 45px;
     scroll-padding-inline: 45px;
@@ -1555,7 +1654,16 @@ textarea.form-input::-webkit-resizer { display: none; }
    * REUSED STYLE
    */
 
-  .sidebar, article { width: 700px; }
+  .sidebar, article { width: 700px; animation: slidein 500ms ease forwards;}
+    @keyframes slidein {
+      25% {
+        transform: translateX(-250px);
+      }
+  
+      100% {
+        transform: translateX(0);
+      }
+    }
 
   .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
 
@@ -1676,6 +1784,16 @@ textarea.form-input::-webkit-resizer { display: none; }
   .sidebar, article {
     width: 950px;
     box-shadow: var(--shadow-5);
+    animation: slidein 500ms ease forwards;
+  }
+  @keyframes slidein {
+    0% {
+      transform: translateX(-100px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
   }
 
 
@@ -1736,7 +1854,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   /* clients */
 
-  .clients-item { min-width: calc(25% - 38px); }
+  .clients-item { min-width: calc(25%); }
 
 
 
@@ -1792,7 +1910,16 @@ textarea.form-input::-webkit-resizer { display: none; }
    * REUSED STYLE
    */
 
-  .sidebar, article { width: auto; }
+  .sidebar, article { width: auto; animation: slidein 500ms ease forwards;}
+    @keyframes slidein {
+      25% {
+        transform: translateX(-100px);
+      }
+  
+      100% {
+        transform: translateX(0);
+      }
+    }
 
   article { min-height: 100%; }
 
@@ -1815,6 +1942,12 @@ textarea.form-input::-webkit-resizer { display: none; }
     min-width: 75%;
     width: 75%;
     margin: 0;
+    animation: slide 500ms ease forwards;
+  }
+
+  @keyframes slide {
+    0% { transform: translateX(100px); opacity: 0.5; }
+    100% { transform: translateX(0); opacity: 1; }
   }
 
 
