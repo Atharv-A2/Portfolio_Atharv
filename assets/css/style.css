@@ -857,6 +857,53 @@ main {
 
 .article-title { margin-bottom: 30px; }
 
+/**
+ * Resume Downloader Button 
+ */
+
+.article-title, .resume-header {
+  display: inline-block;
+  margin-right: 5px;
+  /* Adds some space between title and button */
+}
+@media (max-width: 450px) {
+  .resume-header {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 5px;
+      /* Adds some space between title and button */
+    }
+    .resume-download-button svg {
+      fill: #f0f0f0;
+      width: 14px;
+      height: 14px;
+    }
+}
+
+.resume-download-button {
+  display: inline-block;
+  padding: 4px;
+  background-color: transparent;
+  transition: transform 0.3s ease;
+  /* Smooth scaling transition */
+  cursor: pointer;
+}
+
+.resume-download-button:hover {
+  transform: scale(1.2);
+  /* Scale up when hovered */
+}
+
+.resume-download-button svg {
+  fill: #f0f0f0;
+  width: 28px;
+  height: 28px;
+}
+
+.resume-download-button:hover svg {
+  fill: #f0f0f0;
+}
+
 
 /**
  * education and experience 
