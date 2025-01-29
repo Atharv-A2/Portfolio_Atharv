@@ -1488,15 +1488,21 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="mailto:atharv1901@gmail.com" method="POST" enctype="text/plain" class="form" data-form>
+          <form action="https://formspree.io/f/mpwqraak" method="POST" class="form" data-form>
 
             <div class="input-wrapper">
-              <input type="text" name="Full Name" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="E-Mail" class="form-input" placeholder="Email address" required data-form-input>
+              <label>
+                <input type="text" name="Full Name" class="form-input" placeholder="Full name" required data-form-input>
+              </label>
+              
+              <label>
+                <input type="email" name="E-Mail" class="form-input" placeholder="Email address" required data-form-input>
+              </label>
             </div>
 
-            <textarea name="Message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <label>
+              <textarea name="Message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            </label>
 
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
